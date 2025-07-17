@@ -53,7 +53,7 @@ README.md       → Project documentation file. Explains how to set up, configur
 
 - Clone the repository:
 
-git clone https://github.com/MiBonato/frontend-legacy-projects/slider_legacy.git
+git clone https://github.com/MiBonato/slider_legacy.git
 
 - Add the script (slider.js) and style files (slider.css) into your project and load them in your header/footer.
 - get your ressources with your prefered method ( see ## Image Format)
