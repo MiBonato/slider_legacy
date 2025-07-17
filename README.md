@@ -22,18 +22,18 @@ A fast and responsive image slider built with plain JavaScript (no dependencies)
 ## Project Files 
 
 project-root/
-├── assets/
-├── css/
-│   ├── slider.css
-│   └── style.css
-├── data/
-│   └── images.json
-├── script/
-│    ├── script.js
-│    └── slider.js
-├── .gitignore
-├── Index.html
-└── README.md
+- assets/
+- css/
+- - slider.css
+- - style.css
+- data/
+- - images.json
+- script/
+- - script.js
+- - slider.js
+-  .gitignore
+- Index.html
+- README.md
 
 ## Files Description
 
