@@ -1,0 +1,74 @@
+[
+  {
+    "src": {
+      "mobile": "./assets/10-2500x1667.jpg",
+      "tablet": "./assets/10-2500x1667.jpg",
+      "desktop": "./assets/10-2500x1667.jpg"
+    },
+    "alt": "Dense forest facing a blue sea with distant mountains"
+  },
+  {
+    "src": {
+      "mobile": "./assets/11-2500x1667.jpg",
+      "tablet": "./assets/11-2500x1667.jpg",
+      "desktop": "./assets/11-2500x1667.jpg"
+    },
+    "alt": "Green plain with a winding river and wooded hills"
+  },
+  {
+    "src": {
+      "mobile": "./assets/28-4928x3264.jpg",
+      "tablet": "./assets/28-4928x3264.jpg",
+      "desktop": "./assets/28-4928x3264.jpg"
+    },
+    "alt": "Mountain waterfall surrounded by lush vegetation"
+  },
+  {
+    "src": {
+      "mobile": "./assets/29-4000x2670.jpg",
+      "tablet": "./assets/29-4000x2670.jpg",
+      "desktop": "./assets/29-4000x2670.jpg"
+    },
+    "alt": "Snowy mountain range under a blue sky"
+  },
+  {
+    "src": {
+      "mobile": "./assets/67-2848x4288.jpg",
+      "tablet": "./assets/67-2848x4288.jpg",
+      "desktop": "./assets/67-2848x4288.jpg"
+    },
+    "alt": "Black and white hillside scattered with trees"
+  },
+  {
+    "src": {
+      "mobile": "./assets/70-3011x2000.jpg",
+      "tablet": "./assets/70-3011x2000.jpg",
+      "desktop": "./assets/70-3011x2000.jpg"
+    },
+    "alt": "Tree-lined path in the mist"
+  },
+  {
+    "src": {
+      "mobile": "./assets/71-5000x3333.jpg",
+      "tablet": "./assets/71-5000x3333.jpg",
+      "desktop": "./assets/71-5000x3333.jpg"
+    },
+    "alt": "Swing facing a seaside landscape at sunrise"
+  },
+  {
+    "src": {
+      "mobile": "./assets/81-5000x3250.jpg",
+      "tablet": "./assets/81-5000x3250.jpg",
+      "desktop": "./assets/81-5000x3250.jpg"
+    },
+    "alt": "Natural tunnel formed by leafy trees"
+  },
+  {
+    "src": {
+      "mobile": "./assets/83-2560x1920.jpg",
+      "tablet": "./assets/83-2560x1920.jpg",
+      "desktop": "./assets/83-2560x1920.jpg"
+    },
+    "alt": "Dark forest at dusk"
+  }
+]
