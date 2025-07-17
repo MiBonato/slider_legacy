@@ -35,18 +35,17 @@ project-root/
 ├── Index.html
 └── README.md
 
-
 ## Files Description
 
-assets          → Static assets used in the project.
-slider.css      → Contains specific styles for the slider component, including animations and layout.
-style.css       → General styles for the HTML page (reset, layout, typography, etc.).
-images.json     → Example JSON file used to simulate image loading from an API. Defines `src` paths and optional `alt` text for responsive images.
-script.js       → Entry script for initializing the slider. Handles configuration loading and setup logic.
-slider.js       → Core logic of the slider module. Contains all the slider functionality (animation, autoplay, swipe, navigation, etc.).
-.gitignore      → Defines untracked files and folders Git should ignore (e.g., node_modules, build folders, .env, etc.).
-Index.html      → Main HTML file that includes references to styles and scripts. It contains the container element used to generate the slider.
-README.md       → Project documentation file. Explains how to set up, configure, and use the slider.
+- assets          → Static assets used in the project.
+- slider.css      → Contains specific styles for the slider component, including animations and layout.
+- style.css       → General styles for the HTML page (reset, layout, typography, etc.).
+- images.json     → Example JSON file used to simulate image loading from an API. Defines `src` paths and optional `alt` text for responsive images.
+- script.js       → Entry script for initializing the slider. Handles configuration loading and setup logic.
+- slider.js       → Core logic of the slider module. Contains all the slider functionality (animation, autoplay, swipe, navigation, etc.).
+- .gitignore      → Defines untracked files and folders Git should ignore (e.g., node_modules, build folders, .env, etc.).
+- Index.html      → Main HTML file that includes references to styles and scripts. It contains the container element used to generate the slider.
+- README.md       → Project documentation file. Explains how to set up, configure, and use the slider.
 
 
 ## Installation
@@ -60,38 +59,39 @@ git clone https://github.com/MiBonato/slider_legacy.git
 - call createSlider with your parameters
 
 createSlider({
-    containerSelector: '#YourId',
-    images: images,
-    config: {
-      autoplay: ,
-      duration: ,
-      showArrows: ,
-      showDots: ,
-      animation: ,
-      transition: 
-    }
-  });
-
+  containerSelector: '#YourId',
+  images: images,
+  config: {
+    autoplay: true,
+    duration: 4500,
+    showArrows: true,
+    showDots: true,
+    animation: 'slide', // or 'fade'
+    transition: 'transform 0.5s ease-in-out'
+  }
+});
 
 ## Configuration Options
-Key	            Type	    Default	                        Description
-autoplay	    boolean	    true	                        Enables or disables autoplay
-duration	    number	    4500	                        Time between slides in milliseconds
-showArrows	    boolean	    true	                        Shows previous and next navigation arrows
-showDots	    boolean	    true	                        Displays navigation dots below the slider
-animation	    string	    'slide'	                        Animation type: 'slide' or 'fade'
-transition	    string	    'transform 0.5s ease-in-out'	CSS transition for slide animation
+
+| Key          | Type    | Default                        | Description                              |
+| ------------ | ------- | ------------------------------ | ---------------------------------------- |
+| `autoplay`   | boolean | `true`                         | Enables or disables autoplay             |
+| `duration`   | number  | `4500`                         | Time between slides (in ms)              |
+| `showArrows` | boolean | `true`                         | Show left/right navigation arrows        |
+| `showDots`   | boolean | `true`                         | Display navigation dots below the slider |
+| `animation`  | string  | `'slide'`                      | `'slide'` or `'fade'`                    |
+| `transition` | string  | `'transform 0.5s ease-in-out'` | CSS transition for the animation         |
 
 ## Image Format
 Each image object should follow this format:
 
 {
-  src: {
-    mobile: 'mobile-image.jpg',
-    tablet: 'tablet-image.jpg',
-    desktop: 'desktop-image.jpg'
+  "src": {
+    "mobile": "mobile-image.jpg",
+    "tablet": "tablet-image.jpg",
+    "desktop": "desktop-image.jpg"
   },
-  alt: 'Image description'
+  "alt": "Image description"
 }
 
 You can omit tablet or desktop if not needed. At least one valid image is required.
