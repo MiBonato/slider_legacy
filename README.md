@@ -79,17 +79,17 @@ You can add multiple sliders like this:
 
 Create or customize your data/images.json file with this structure:
 
-[
-  {
-    "src": {
-      "mobile": "img1-mobile.jpg",
-      "tablet": "img1-tablet.jpg",
-      "desktop": "img1-desktop.jpg"
-    },
-    "alt": "Image description"
-  },
-  ...
-]
+      [
+        {
+          "src": {
+            "mobile": "img1-mobile.jpg",
+            "tablet": "img1-tablet.jpg",
+            "desktop": "img1-desktop.jpg"
+          },
+          "alt": "Image description"
+        },
+        ...
+      ]
 
 At least one valid image source (mobile, tablet, or desktop) is required per image.
 
@@ -98,20 +98,20 @@ At least one valid image source (mobile, tablet, or desktop) is required per ima
 Make sure your main script imports the Slider class and targets all [data-slider] containers. Example:
 
       import { Slider } from './slider.js';
-      
+
       async function fetchImagesData() {
         const response = await fetch('./data/images.json');
         if (!response.ok) throw new Error(`HTTP error ${response.status}`);
         return await response.json();
       }
-      
+
       document.addEventListener('DOMContentLoaded', async () => {
         const images = await fetchImagesData();
         const sliderContainers = document.querySelectorAll('[data-slider]');
-      
+
         sliderContainers.forEach((container, index) => {
           const sliderId = container.getAttribute('id') || `slider-${index}`;
-          
+
           new Slider({
             containerSelector: `#${sliderId}`,
             images: images,
@@ -142,14 +142,14 @@ Make sure your main script imports the Slider class and targets all [data-slider
 ## Image Format
 Each image object should follow this format:
 
-{
-  "src": {
-    "mobile": "mobile-image.jpg",
-    "tablet": "tablet-image.jpg",
-    "desktop": "desktop-image.jpg"
-  },
-  "alt": "Image description"
-}
+      {
+        "src": {
+          "mobile": "mobile-image.jpg",
+          "tablet": "tablet-image.jpg",
+          "desktop": "desktop-image.jpg"
+        },
+        "alt": "Image description"
+      }
 
 You can omit tablet or desktop if not needed. At least one valid image is required.
 
