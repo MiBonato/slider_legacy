@@ -18,6 +18,9 @@ A fast and responsive image slider built with plain JavaScript (no dependencies)
 - Responsive images for mobile, tablet, desktop
 - Accessible: ARIA on controls and alt on images
 - Configuration validation with sensible defaults
+- Custom focus styling for arrows and navigation dots
+- Centered images inside the <picture> tag
+- Multiple sliders supported on the same page
 
 ## Project Files 
 
@@ -54,22 +57,76 @@ project-root/
 
 git clone https://github.com/MiBonato/slider_legacy.git
 
-- Add the script (slider.js) and style files (slider.css) into your project and load them in your header/footer.
-- get your ressources with your prefered method ( see ## Image Format)
-- call createSlider with your parameters
+- Include required files in your project:
+- - Add the CSS files (css/slider.css and css/style.css) in the <head> of your HTML.
+- - Load the JS files (script.js and slider.js) in the <body> or as ES modules depending on your setup.
 
-createSlider({
-  containerSelector: '#YourId',
-  images: images,
-  config: {
-    autoplay: true,
-    duration: 4500,
-    showArrows: true,
-    showDots: true,
-    animation: 'slide', // or 'fade'
-    transition: 'transform 0.5s ease-in-out'
-  }
+- Prepare your HTML container:
+
+Each slider container must have:
+
+- - A unique id
+- - The attribute data-slider
+
+For example:
+<div id="my-slider" data-slider></div>
+
+You can add multiple sliders like this:
+<div id="slider-one" data-slider></div>
+<div id="slider-two" data-slider></div>
+
+- Provide an image dataset
+
+Create or customize your data/images.json file with this structure:
+
+[
+  {
+    "src": {
+      "mobile": "img1-mobile.jpg",
+      "tablet": "img1-tablet.jpg",
+      "desktop": "img1-desktop.jpg"
+    },
+    "alt": "Image description"
+  },
+  ...
+]
+
+At least one valid image source (mobile, tablet, or desktop) is required per image.
+
+- Initialize the sliders with JavaScript:
+
+Make sure your main script imports the Slider class and targets all [data-slider] containers. Example:
+
+import { Slider } from './slider.js';
+
+async function fetchImagesData() {
+  const response = await fetch('./data/images.json');
+  if (!response.ok) throw new Error(`HTTP error ${response.status}`);
+  return await response.json();
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
+  const images = await fetchImagesData();
+  const sliderContainers = document.querySelectorAll('[data-slider]');
+
+  sliderContainers.forEach((container, index) => {
+    const sliderId = container.getAttribute('id') || `slider-${index}`;
+    
+    new Slider({
+      containerSelector: `#${sliderId}`,
+      images: images,
+      config: {
+        autoplay: true,
+        duration: 4000,
+        showArrows: true,
+        showDots: true,
+        animation: 'slide', // or 'fade'
+        transition: 'transform 0.6s ease'
+      }
+    });
+  });
 });
+
 
 ## Configuration Options
 
@@ -95,3 +152,10 @@ Each image object should follow this format:
 }
 
 You can omit tablet or desktop if not needed. At least one valid image is required.
+
+
+## Changelog
+
+- Added custom focus styles for arrows and dots (accessibility improvement).
+- Ensured images inside <picture> are centered using modern layout.
+- Now supports multiple sliders on the same page independently.
