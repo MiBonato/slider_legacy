@@ -40,7 +40,6 @@ export function createSlider({ containerSelector, images, config }) {
   container.innerHTML = '';
   container.classList.add('cs--main--container');
 
-  // Track container
   trackElement = document.createElement('div');
   trackElement.id = 'Slider';
   trackElement.className = 'slider--track';
@@ -51,7 +50,6 @@ export function createSlider({ containerSelector, images, config }) {
   }
   container.appendChild(trackElement);
 
-  // Slides
   const validSlides = images.map((img, index) => createImageSlide(img, index)).filter(Boolean);
   if (validSlides.length === 0) return;
 
@@ -133,14 +131,14 @@ function createNavigationArrows(container) {
   leftArrow.className = 'slider--arrow left';
   leftArrow.setAttribute('aria-label', 'Show previous slide');
   leftArrow.setAttribute('title', 'Previous');
-  leftArrow.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 26" width="4rem" height="7rem"><polygon fill="rgba(255,255,255,50%)" points="12.885,0.58 14.969,2.664 4.133,13.5 14.969,24.336 12.885,26.42 2.049,15.584 -0.035,13.5"/></svg>`;
+  leftArrow.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 26" width="4rem" height="7rem"><polygon fill="currentColor" points="12.885,0.58 14.969,2.664 4.133,13.5 14.969,24.336 12.885,26.42 2.049,15.584 -0.035,13.5"/></svg>`;
   leftArrow.onclick = () => goToSlide('prev');
 
   const rightArrow = document.createElement('button');
   rightArrow.className = 'slider--arrow right';
   rightArrow.setAttribute('aria-label', 'Show next slide');
   rightArrow.setAttribute('title', 'Next');
-  rightArrow.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 26" width="4rem" height="7rem"><polygon fill="rgba(255,255,255,50%)" points="2.019,0.58 -0.035,2.634 10.646,13.316 -0.035,23.997 2.019,26.052 14.755,13.316"/></svg>`;
+  rightArrow.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 26" width="4rem" height="7rem"><polygon fill="currentColor" points="2.019,0.58 -0.035,2.634 10.646,13.316 -0.035,23.997 2.019,26.052 14.755,13.316"/></svg>`;
   rightArrow.onclick = () => goToSlide('next');
 
   buttonContainer.appendChild(leftArrow);
