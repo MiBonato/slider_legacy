@@ -97,35 +97,35 @@ At least one valid image source (mobile, tablet, or desktop) is required per ima
 
 Make sure your main script imports the Slider class and targets all [data-slider] containers. Example:
 
-import { Slider } from './slider.js';
-
-async function fetchImagesData() {
-  const response = await fetch('./data/images.json');
-  if (!response.ok) throw new Error(`HTTP error ${response.status}`);
-  return await response.json();
-}
-
-document.addEventListener('DOMContentLoaded', async () => {
-  const images = await fetchImagesData();
-  const sliderContainers = document.querySelectorAll('[data-slider]');
-
-  sliderContainers.forEach((container, index) => {
-    const sliderId = container.getAttribute('id') || `slider-${index}`;
-    
-    new Slider({
-      containerSelector: `#${sliderId}`,
-      images: images,
-      config: {
-        autoplay: true,
-        duration: 4000,
-        showArrows: true,
-        showDots: true,
-        animation: 'slide', // or 'fade'
-        transition: 'transform 0.6s ease'
+      import { Slider } from './slider.js';
+      
+      async function fetchImagesData() {
+        const response = await fetch('./data/images.json');
+        if (!response.ok) throw new Error(`HTTP error ${response.status}`);
+        return await response.json();
       }
-    });
-  });
-});
+      
+      document.addEventListener('DOMContentLoaded', async () => {
+        const images = await fetchImagesData();
+        const sliderContainers = document.querySelectorAll('[data-slider]');
+      
+        sliderContainers.forEach((container, index) => {
+          const sliderId = container.getAttribute('id') || `slider-${index}`;
+          
+          new Slider({
+            containerSelector: `#${sliderId}`,
+            images: images,
+            config: {
+              autoplay: true,
+              duration: 4000,
+              showArrows: true,
+              showDots: true,
+              animation: 'slide', // or 'fade'
+              transition: 'transform 0.6s ease'
+            }
+          });
+        });
+      });
 
 
 ## Configuration Options
