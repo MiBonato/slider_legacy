@@ -12,6 +12,7 @@
     display: flex;
     transition: transform 0.5s ease-in-out;
     width: 100%;
+    height: inherit;
 }
 .slider--track.anim--fade {
   position: relative;
@@ -32,7 +33,7 @@
 .slide {
     flex: 0 0 100%;
     max-width: 100%;
-    height: auto;
+    height: inherit;
     user-select: none;
     -webkit-user-drag: none; 
     cursor: grab; 
@@ -40,9 +41,15 @@
 .slide:active {
   cursor: grabbing;
 }
+picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+}
 .slide img {
     width: 100%;
-    height: 100%;
+    height: inherit;
     object-fit: cover;
     object-position: center;
 }
