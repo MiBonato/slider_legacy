@@ -1,1 +1,39 @@
-# No files to ignore at this time
+# ======================================
+# 🧩 Node.js
+# ======================================
+
+# Dependencies installed via npm
+node_modules/
+
+# Lock files (keep only one if needed)
+package-lock.json
+
+# ======================================
+# 🧪 Build artifacts
+# ======================================
+
+# Compiled CSS from SCSS (auto-generated)
+css/slider.css.map
+
+
+# ======================================
+# 🧰 Logs and debug
+# ======================================
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ======================================
+# 🖥️ IDE/editor/system files
+# ======================================
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# VSCode settings (optional)
+.vscode/
+*.code-workspace
