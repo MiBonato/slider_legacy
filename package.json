@@ -1,5 +1,13 @@
 {
+  "name": "slider-legacy",
+  "version": "1.2.0",
+  "scripts": {
+    "build": "tsc",
+    "start": "npx live-server"
+  },
   "devDependencies": {
-    "sass": "^1.89.2"
+    "live-server": "^1.2.0",
+    "sass": "^1.89.2",
+    "typescript": "^5.9.2"
   }
 }
