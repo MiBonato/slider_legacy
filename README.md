@@ -28,18 +28,18 @@ project-root/
 - assets/
 - css/
 - - _slider.scss (source)
-- - _variables.scss (source)
+- - _variables.scss 
 - - main.scss (source)
 - - slider.css (compiled)
 - - style.css
 - data/
 - - images.json
 - script/
-- - script.js
-- - slider.js
+- - script.js (compiled)
+- - slider.js (compiled)
 - typescript/
-- - script.ts (compiled)
-- - slider.ts (compiled)
+- - script.ts (source)
+- - slider.ts (source)
 - .gitignore
 - Index.html
 - tsconfig.json
